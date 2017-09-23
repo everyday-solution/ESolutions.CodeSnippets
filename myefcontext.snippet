@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>myefcontext</Title>
+			<Shortcut>myefcontext</Shortcut>
+			<Description></Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[	public partial class MyModel
+	{
+		//Constants
+		#region SessionKey
+		private const String SessionKey = "{2FD539A0-8066-459C-9E53-B4AB04BD285B}";
+		#endregion
+
+		//Fields
+		#region myModel
+		private static MyModel myModel = null;
+		#endregion
+
+		//Properties
+		#region Default
+		public static MyModel Default
+		{
+			get
+			{
+				MyModel result = null;
+
+				if (HttpContext.Current == null)
+				{
+					if (MyModel.myModel == null)
+					{
+						MyModel.myModel = new MyModel();
+					}
+
+					result = MyModel.myModel;
+				}
+				else
+				{
+					if (HttpContext.Current.Items[MyModel.SessionKey] == null)
+					{
+						HttpContext.Current.Items[MyModel.SessionKey] = new MyModel();
+					}
+
+					result = HttpContext.Current.Items[MyModel.SessionKey] as MyModel;
+				}
+
+				return result;
+			}
+			set
+			{
+				if (HttpContext.Current == null)
+				{
+					MyModel.myModel = value;
+				}
+				else
+				{
+					HttpContext.Current.Items[MyModel.SessionKey] = value;
+				}
+			}
+		}
+		#endregion
+
+		//Constructors
+		#region MyModel
+		public MyModel(System.Data.Entity.Core.EntityClient.EntityConnection connection)
+			: base(connection, true)
+		{
+
+		}
+		#endregion
+	}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

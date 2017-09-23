@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>myproperty</Title>
+			<Shortcut>myproperty</Shortcut>
+			<Description></Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Type of propertyname</ToolTip>
+					<Default>String</Default>
+				</Literal>
+				<Literal>
+					<ID>backingField</ID>
+					<ToolTip>Backing-Field accessed by the property</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region $name$
+		public $type$ $name$
+		{
+			get
+			{
+				return this$backingField$;
+			}
+			set
+			{
+				this$backingField$ = value;
+			}
+		}
+		#endregion$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

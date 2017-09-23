@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>myasprepeater_eventargs</Title>
+			<Shortcut>myasprepeater_eventargs</Shortcut>
+			<Description></Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>BusinessObjectType</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region $name$ItemEventArgs
+		private class $name$ItemEventArgs
+		{
+			//Constructors
+			#region $name$ItemEventArgs
+			public $name$ItemEventArgs(RepeaterItemEventArgs item)
+			{
+				this.item = item;
+			}
+			#endregion
+
+			//Fields
+			#region item
+			private RepeaterItemEventArgs item = null;
+			#endregion
+
+			//Properties
+			#region Data
+			public $BusinessObjectType$ Data
+			{
+				get
+				{
+					return this.item.Item.DataItem as $BusinessObjectType$;
+				}
+			}
+			#endregion
+			$end$
+		}
+		#endregion]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

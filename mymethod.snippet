@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>mymethod</Title>
+			<Shortcut>mymethod</Shortcut>
+			<Description></Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>visibility</ID>
+					<ToolTip>visibility of the method</ToolTip>
+					<Default>public</Default>
+				</Literal>
+				<Literal>
+					<ID>returntype</ID>
+					<ToolTip>Type of the returned value</ToolTip>
+					<Default>void</Default>
+				</Literal>
+				<Literal>
+					<ID>parameter</ID>
+					<ToolTip>Parameter list of the mehtod</ToolTip>
+					<Default></Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region $name$
+		$visibility$ $returntype$ $name$ ($parameter$)
+		{
+			$end$
+		}
+		#endregion]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
