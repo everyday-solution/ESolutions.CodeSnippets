@@ -25,31 +25,17 @@
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[#region $name$ItemEventArgs
-		private class $name$ItemEventArgs
+		private class $name$ItemEventArgs : RepeaterItemEventArgsBase<$BusinessObjectType$>
 		{
 			//Constructors
 			#region $name$ItemEventArgs
 			public $name$ItemEventArgs(RepeaterItemEventArgs item)
+				: base(item)
 			{
-				this.item = item;
 			}
-			#endregion
-
-			//Fields
-			#region item
-			private RepeaterItemEventArgs item = null;
 			#endregion
 
 			//Properties
-			#region Data
-			public $BusinessObjectType$ Data
-			{
-				get
-				{
-					return this.item.Item.DataItem as $BusinessObjectType$;
-				}
-			}
-			#endregion
 			$end$
 		}
 		#endregion]]>
