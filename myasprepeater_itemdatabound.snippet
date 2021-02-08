@@ -28,11 +28,10 @@
 		protected void $name$_ItemDataBound(Object sender, RepeaterItemEventArgs e)
 		{
 			var ee = new $name$ItemEventArgs(e);
-
-			if (ee.Data != null)
+			ee.ShowData(sender, () =>
 			{
 				$end$
-			}
+			});
 		}
 		#endregion]]>
 			</Code>
