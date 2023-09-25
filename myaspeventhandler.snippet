@@ -14,15 +14,18 @@
 			<Declarations>
 				<Literal>
 					<ID>name</ID>
-					<ToolTip>Property name</ToolTip>
-					<Default>MyProperty</Default>
+					<ToolTip>Handler name</ToolTip>
+					<Default>MyMethod</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[#region $name$
 		protected void $name$ (Object sender, EventArgs e)
 		{
-			$end$
+			this.TryAction(() =>
+			{
+				$end$
+			});
 		}
 		#endregion]]>
 			</Code>
